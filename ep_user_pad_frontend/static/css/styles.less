@@ -14,13 +14,20 @@ limitations under the License. */
 
 // variables
 
-@main-orange: #FFC049;
-@alt-orange: #FFD88F;
-@main-color: #155F71;
+//@main-orange: #FFC049;
+//@alt-orange: #FFD88F;
+@main-orange: #00008B;
+//@alt-orange: #0000CD;
+@alt-orange: #00008B;
+//@main-color: #155F71;
+//@main-color: #00BFFF;
+@main-color: #4169E1;
 @red: #B82349;
+@button-hover:#228B22;
 @main-font: 10pt Futura, 'Open Sans', sans-serif;
-
-
+@button-background: #00008B;
+@button-border: #ffffff;
+@button-text-color: #ffffff;
 // functions 
 
 .loginArea {
@@ -100,6 +107,7 @@ html, body {
 
 .inside {
   width: 960px;
+  min-height: 55px;
   margin: 0 auto;
 }
 
@@ -203,25 +211,30 @@ button {
   padding: 0;
   cursor: pointer;
   vertical-align: middle;*/
-  -moz-box-shadow:inset 0px 1px 0px 0px #fceaca;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #fceaca;
-  box-shadow:inset 0px 1px 0px 0px #fceaca;
-  background-color:#ffce73;
+//  -moz-box-shadow:inset 0px 1px 0px 0px @button-border;
+//  -webkit-box-shadow:inset 0px 1px 0px 0px @button-border;
+//  box-shadow:inset 0px 1px 0px 0px @button-border;
+  //background-color:#ffce73;
+border:none;
+  background-color:@button-background;
   .roundedBorder;
-  border:1px solid #ffc04a;
+  //border:1px solid #ffc04a;
+//  border:1px solid @button-border;
   display:inline-block;
-  color: @main-color;
+  //color: @main-color;
+  color: @button-text-color;
   font-size:11pt;
   padding: 3px 15px;
   text-decoration:none;
-  text-shadow:1px 1px 0px #c7dee3;
+//  text-shadow:1px 1px 0px #c7dee3;
   margin: 4px 2px;
   cursor: pointer;
   vertical-align: middle;
 }
 
 button:hover {
-  background-color:#ffc35c; 
+  //background-color:#ffc35c; 
+  background-color:@button-hover; 
 }
 
 button:active {
@@ -324,6 +337,7 @@ input[placeholder] {
 
 #sekMenu {
   width: 250px;
+  margin-top: 15px;
   float: left;
   font-size: 9pt;
 }
@@ -541,8 +555,9 @@ footer {
 
 #groupNav {
   .link-main;
-  background-color: @alt-orange;
+  background-color: @main-orange;
   padding: 2px 0;
+  height: 15px;
   ul {
     margin: 0;
     padding: 0 0 0 5%;
@@ -552,6 +567,9 @@ footer {
       font-size: 8pt;
     }
   }
+}
+#groupNav .inside{
+   height: 0px;
 }
 
 .smallSeparator {
@@ -661,7 +679,7 @@ img {
 }
 
 #minimize, #maximize {
-  background-color: @main-color;
+  background-color: @main-orange;
   position: absolute;
   left: 54%;
   top: 0px;
